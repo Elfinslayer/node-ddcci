@@ -74,6 +74,26 @@ for (const monitor of ddcci.getMonitorList()) {
     * **`level`**  
       `integer`. Between 0-100 representing the new contrast level.
 
+* ### `getInput(monitorId)`
+  Queries a monitor's current input value.
+
+  * #### Parameters
+    * **`monitorId`**
+      `String`, ID of monitor for which to query the input.
+  
+  * #### Return value
+    An `integer` between 1 and 18, representing the the currently active input id.
+
+* ### `setInput(monitorId, value)`
+  Sets a monitor's input value.
+
+  * #### Parameters
+    * **`monitorId`**
+      `String`, ID of monitor for which to query the input.
+    
+    * **`value`**
+      `integer`, value for which to set the new input.
+
 * ### `_getVCP(monitorId, vcpCode)`
   Queries a monitor for a VCP code value.
   * #### Parameters

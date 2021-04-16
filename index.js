@@ -30,6 +30,10 @@ module.exports = {
         return ddcci.getVCP(monitorId, vcp.CONTRAST)[1];
     }
 
+  , getInput (monitorId) {
+        return ddcci.getVCP(monitorId, vcp.INPUT_SOURCE)[0];
+  }
+
   , setBrightness (monitorId, level) {
         if (level < 0) {
             throw RangeError("Brightness level not within valid range");
@@ -44,6 +48,14 @@ module.exports = {
         }
 
         ddcci.setVCP(monitorId, vcp.CONTRAST, level);
+    }
+
+  , setInput (monitorId, value) {
+        if (value < 1 || value > 18) {
+            throw RangeError("Input value not within valid range");
+        }
+
+        ddcci.setVCP(monitorId, vcp.INPUT_SOURCE, value);
     }
 };
 
